@@ -240,7 +240,7 @@ class TestBaseClasses(unittest.TestCase):
     def test_channel_tuples(self):
         for group_size in [2, 4, 8]:
             self.device[ChannelSynchronization].synchronize_channels(group_size)
-
+            
             self.assertEqual(len(self.device.channel_tuples), 8 // group_size, "Invalid number of channel tuples")
 
             # Check if channels and channel tuples are connected right
