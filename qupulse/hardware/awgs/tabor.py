@@ -21,7 +21,7 @@ from qupulse.utils.types import ChannelID
 from qupulse.pulses.multi_channel_pulse_template import MultiChannelWaveform
 from qupulse._program._loop import Loop, make_compatible
 from qupulse.hardware.util import voltage_to_uint16, make_combined_wave, find_positions, get_sample_times
-from qupulse.hardware.awgs.old_base import AWGAmplitudeOffsetHandling
+from qupulse.hardware.awgs.old_base import AWG, AWGAmplitudeOffsetHandling  # TODO: Remove import of old_base
 from qupulse.hardware.awgs.base_features import FeatureAble
 
 from qupulse.hardware.awgs.base import AWGDevice, AWGChannel, AWGChannelTuple
@@ -1375,7 +1375,7 @@ class AWGChannelTupleTabor(AWGChannelTuple):
         as the manual states this speeds up sequence validation when uploading multiple sequences."""
         if self._is_in_config_mode is False:
 
-            # 1. Selct channel pair
+            # 1. Select channel pair
             # 2. Select DC as function shape
             # 3. Select build-in waveform mode
 
