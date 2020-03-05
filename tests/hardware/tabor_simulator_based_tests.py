@@ -245,3 +245,5 @@ class TaborMemoryReadTests(TaborSimulatorBasedTest):
         advanced_table = self.channel_pair.read_advanced_sequencer_table()
 
         np.testing.assert_equal(advanced_table, expected)
+
+
